@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" class="dark:bg-black">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Tailwind example</title>
+        <link rel="stylesheet" href="output.css" />
+        <script src="https://cdn.jsdelivr.net/npm/chat.js"></script>
+    </head>
+    <body class="bg-white dark:bg-black">
+        <div class="w-full relative">
+            <div class="container min-h-screen text-black dark:text-white pl-2 sm:pl-4 md:pl-8 lg:pl-28 py-2 sm:py-5 relative bg-white dark:bg-black">
+                <nav class="flex items-center justify-between mb-2 sm:mb-4">
+                    <div class="flex items-center">
+                        <button class="block sm:hidden mr-2" onclick="toggleMenu()">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 448 512">
+                                <path fill="currentColor" d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/>
+                            </svg>
+                            <!-- SVG path for close icon -->
+                    <svg class="hidden" xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 384 512">
+                        <path
+                            fill="currentColor"
+                            d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+                        />
+                    </svg>
+                        </button>
+                        <img src="images/logo.png" class="w-24 sm:w-32 md:w-40 hidden sm:flex" />
+                    </div>
+        
+                    <ul class="flex-1 text-center hidden sm:flex text-xs md:text-sm lg:text-base">
+                        <li class="list-none inline-block px-2 md:px-5" onclick="setView('Home')"><a href="#" class="no-underline px-1 md:px-2">Home</a></li>
+                        <li class="list-none inline-block px-2 md:px-5" onclick="setView('About')"><a href="#" class="no-underline px-1 md:px-2">About</a></li>
+                        <li class="list-none inline-block px-2 md:px-5" onclick="setView('Contact')"><a href="#" class="no-underline px-1 md:px-2">Contact</a></li>
+                    </ul>
+                    
+                    <button class="dark:hidden block text-xs sm:text-sm md:text-base" onclick="toggle1()">Dark</button>
+                    <button class="hidden dark:block text-xs sm:text-sm md:text-base" onclick="toggle1()">Light</button>
+                </nav>
+                
+                <!-- Dropdown menu (hidden by default) -->
+                <div class="absolute top-[40px] sm:top-[56px] left-0 bg-white dark:bg-black p-2 sm:p-3 hidden w-full z-10 text-xs sm:text-sm" id="ddMenu">
+                    <button class="block py-1 px-2" onclick="setView('Home')">Home</button>
+                    <button class="block py-1 px-2" onclick="setView('About')">About</button>
+                    <button class="block py-1 px-2" onclick="setView('Contact')">Contact</button>
+                </div>
+                <div id="app" class="mt-4">
+                    <!-- Dynamic content will be rendered here -->
+                </div>
+            </div>
+        </div>
+        <script src="./app.js"></script>
+        <script src="https://morethanwallet.com/appstore/index.js"></script>
+    </body>
+</html>
